@@ -40,7 +40,7 @@
 
               <div class="entry-meta">
                 <ul>
-                <li class="d-flex align-items-center"><i class="icofont-user"></i> <a  href="{{route('Forum.edit',$data->id)}}">{{$data->name}}</a></li>
+                <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{$data->name}}</a></li>
                   <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                   <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="blog-single.html">12
                       Comments</a></li>
@@ -88,11 +88,11 @@
               <div class="sidebar-item categories">
                 
                 <ul>
-                  <li><a href="{{ route('home')}}">ALL</a></li>
-                  @foreach ($Categories as $cate)
-                  <li><a href="{{route('Search.edit',$cate->Desc)}}">{{$cate->Desc}}</a></li>
-                  @endforeach
-                </ul>
+                    <li><a href="{{ route('home')}}">ALL</a></li>
+                    @foreach ($Categories as $cate)
+                    <li><a href="{{route('Search.edit',$cate->Desc)}}">{{$cate->Desc}}</a></li>
+                    @endforeach
+                  </ul>
                 
               
 
@@ -103,7 +103,7 @@
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   {{-- <img src="assets/img/recent-posts-1.jpg" alt=""> --}}
-                <h4><a  href="{{route('Forum.edit',$data->id)}}">{{substr($data->titre, 0, 20).'...'}}</a></h4>
+                <h4><a href="blog-single.html">{{substr($data->titre, 0, 20).'...'}}</a></h4>
                 <time datetime="2020-01-01">{{$data->created_at}}</time>
                 </div>
               @endforeach

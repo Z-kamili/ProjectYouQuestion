@@ -25,7 +25,7 @@ class ValidationPostQuestion extends FormRequest
     {
         return [
             'titre' => 'bail|required|min:10',
-            'Desc'  => 'bail|required|min:20',
+            'Desc'  => 'bail|required|min:10',
             'image' => 'bail|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];
     }

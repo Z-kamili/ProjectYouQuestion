@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//Routes
 Route::get('/home','HomeController@home')->name('home')->middleware('auth');
 Route::get('/index','HomeController@index')->name('index');
 Route::get('/','HomeController@index')->name('index');
@@ -27,6 +27,6 @@ Route::get('/Signin','HomeController@Signin')->name('Signin');
 Route::resource('/posts','QuestionController')->middleware('auth');
 Route::resource('/Forum','ForumController')->middleware('auth');
 Route::resource('/Commentpost','commentaireController')->middleware('auth');
-// Route::post('/Ajaxpost','commentaireController@store');
+Route::resource('/Search','SearchController')->middleware('auth');
 
 Auth::routes();
