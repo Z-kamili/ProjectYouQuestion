@@ -48,7 +48,9 @@
               </div>
               <div class="entry-content">
                 <p>
-                 {{substr($data->Description, 0, 70).'...'}}
+
+                  
+                  {!!substr(($data->Description), 0, 70).'...'!!}
                 </p>
                 <div class="read-more">
                 <a href="{{route('Forum.edit',$data->id)}}">Repondre</a>

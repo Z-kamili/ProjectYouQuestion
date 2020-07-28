@@ -48,7 +48,7 @@
 
     <div class="entry-content">
       <p>
-       {{$item->Description}}
+       {!!$item->Description!!}
       </p>
 
   </article><!-- End blog entry -->
@@ -75,7 +75,7 @@
   <h5><a href="">{{$item->name}}</a><a  class="reply"><i class="icofont-reply" ></i>Reply</a></h5>
   <time datetime="2020-01-01">{{$item->created_at}}</time>
   <p>
-{{$item->content}}
+{!!$item->content!!}
   </p>
   <div class="commentaire" name="commentaire">
     <form action="{{ route('Commentpost.store')}}"  method="post"  enctype="multipart/form-data" class="php-email-form">
@@ -162,7 +162,8 @@
                   @csrf
                   <div class="row">
                     <div class="col form-group">
-                      <textarea name="content" class="form-control" placeholder="Your Reply"></textarea>
+                      {{-- <textarea name="content" class="form-control" placeholder="Your Reply"></textarea> --}}
+                    <textarea class="form-control" id="summary-ckeditor" name="content" ></textarea>
                     </div>
                   </div>
                   @if($errors->any())
@@ -181,8 +182,11 @@
           </div><!-- End blog entries list -->
 
         </div><!-- End row -->
+     <!-- End container -->
+   
+      <!-- End sidebar -->
 
-      </div><!-- End container -->
+      </div>
 
     </section><!-- End Blog Section -->
 
@@ -192,11 +196,12 @@
 
 {{-- script --}}
 {{-- <script src="/main.js"></script> --}}
-
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
 // $(document).ready ( function(){
 //     document.getElementsByClassName('commentaire')[i].style.display = "none";
 // });​
+
 let btn = document.getElementsByClassName('reply');
 let btn_close = document.getElementsByClassName('btn-cancel');
 for(let i=0;i<btn.length;i++){
@@ -210,8 +215,9 @@ for(let i=0;i<btn_close.length;i++){
         document.getElementsByClassName('commentaire')[i].style.display = "none";
     });
 }
-
+CKEDITOR.replace( 'summary-ckeditor' );
 </script>
+
 
 {{-- <script type="text/javascript">
  

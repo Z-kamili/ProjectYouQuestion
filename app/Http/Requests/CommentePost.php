@@ -25,7 +25,7 @@ class CommentePost extends FormRequest
     public function rules()
     {
         return [
-            'content_commentaire'  => 'bail|required|min:10',
+            'content_commentaire'  => 'bail|required',
         ];
     }
 }

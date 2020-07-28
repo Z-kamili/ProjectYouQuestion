@@ -24,7 +24,7 @@ class ValidationReply extends FormRequest
     public function rules()
     {
         return [
-        'content' =>'bail|required|min:10',
+        'content' =>'bail|required',
         ];
     }
 }

@@ -47,6 +47,7 @@ class ForumController extends Controller
         $user = Auth::user();
         $data["users_id"] = $user->id;
         $id_question = Session::get('question_id');
+        // dd($id_question[0]);
         $data["question_id"] = $id_question[0];
         $reponse = Reply::create($data);
         // dd($data);
@@ -77,14 +78,17 @@ class ForumController extends Controller
         $reply = DB::table('replies')->join('users','users.id', '=' ,'replies.users_id')->select('replies.content','replies.id','replies.created_at','users.name')->where('replies.question_id',$id)->get();
         $countreply = Reply::where('question_id',$id)->count();
         $commente = DB::table('comments')->join('users','users.id','=','comments.user_id')->select('content_commentaire','reply_id','users.name','comments.created_at')->get();
-        // dd($commente);
+        $data = DB::table('questions')->join('users','users.id', '=' ,'questions.ID_user')->select('questions.titre','questions.id','questions.Desc as Description','questions.created_at','users.name')->paginate(4);
+        // // dd($commente);
+        // Session::flush();
+        session(['question_id' => null]);
         Session::push('question_id',$QuestionForum[0]->id);
+        // dd($QuestionForum[0]->id);
         return view('Posts.Forum',[
             'postForum' =>$QuestionForum,
             'reply'=>$reply,
             'countreply'=>$countreply,
-            'comments'=>$commente
-
+            'comments'=>$commente,
         ]);
     }
 

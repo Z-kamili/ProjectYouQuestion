@@ -40,7 +40,8 @@
                 <div class="validate"></div> --}}
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="Desc" id="subject" placeholder="Description"></textarea>
+                {{-- <textarea class="form-control" name="Desc" id="subject" placeholder="Description"></textarea> --}}
+                <textarea class="form-control" id="summary-ckeditor" name="Desc" ></textarea>
                 <div class="validate"></div>
               </div>
               <div class="form-group-img">  
@@ -65,4 +66,8 @@
     <!-- ======= Map Section ======= -->
 
   </main><!-- End #main -->
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script>
+CKEDITOR.replace( 'summary-ckeditor' );
+</script>
 @endsection
