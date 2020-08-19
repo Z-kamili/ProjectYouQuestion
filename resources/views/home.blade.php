@@ -56,7 +56,6 @@
                 <a href="{{route('Forum.edit',$data->id)}}">Repondre</a>
                 </div>
               </div>
-
             </article><!-- End blog entry -->
 @endforeach
         <!-- End blog entry -->

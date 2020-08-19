@@ -28,5 +28,6 @@ Route::resource('/posts','QuestionController')->middleware('auth');
 Route::resource('/Forum','ForumController')->middleware('auth');
 Route::resource('/Commentpost','commentaireController')->middleware('auth');
 Route::resource('/Search','SearchController')->middleware('auth');
-
+Route::resource('/Profils','ProfilsController')->middleware('auth');
 Auth::routes();
+

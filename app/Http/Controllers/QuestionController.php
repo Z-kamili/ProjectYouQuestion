@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\ValidationPostQuestion;
 use App\Image;
 use Illuminate\Http\Request;
@@ -41,6 +40,7 @@ class QuestionController extends Controller
     public function store(ValidationPostQuestion $request)
     {
         $data = $request->only(['titre','Desc','ID_opt']);
+        strip_tags(htmlspecialchars_decode($data["Desc"]));
         $user = Auth::user();
         $data["ID_user"] = $user->id;
         $question = Question::create($data);

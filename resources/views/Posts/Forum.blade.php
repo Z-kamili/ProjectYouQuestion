@@ -35,9 +35,12 @@
     <h2 class="entry-title">
     <a href="#">{{$item->titre}}</a>
     </h2>
+    {{-- {{dd($item->path)}} --}}
+    @if($item->path != null)
     <div class="entry-img">
       <img src="http://localhost:8888/storage/{{$item->path}}" class="images" alt="" title="" />
       </div>
+    @endif
     <div class="entry-meta">
       <ul>
         <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">{{$item->name}}</a></li>

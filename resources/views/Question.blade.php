@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <main id="main">
-
     <!-- ======= Contact Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
@@ -40,12 +39,15 @@
                 <div class="validate"></div> --}}
               </div>
               <div class="form-group">
-                {{-- <textarea class="form-control" name="Desc" id="subject" placeholder="Description"></textarea> --}}
                 <textarea class="form-control" id="summary-ckeditor" name="Desc" ></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="form-group-img">  
+              {{-- <div class="form-group-img">  
                 <input id="file-upload" type="file" name="image" accept="image/*" onchange="readURL(this);">
+              </div> --}}
+              <div class="custom-file">
+                <input type="file" class="custom-file-input"  name="image" accept="image/*" onchange="readURL(this);" id="customFileLang" >
+                <label class="custom-file-label" for="customFileLang">choose image</label>
               </div>
               @if($errors->any())
               <ul>

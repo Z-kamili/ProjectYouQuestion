@@ -1835,6 +1835,15 @@ body {
   .blog .entry .entry-footer .cats li {
     display: inline-block;
   }
+
+  .btn-update{
+    background: #68A4C4;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    margin-top: 20px;
+  }
   
   .blog .entry .entry-footer .tags {
     list-style: none;
@@ -2400,6 +2409,19 @@ body {
   
   #footer .credits a {
     color: #a2cce3;
+  }
+
+  @media screen and (max-width: 1000px) {
+    a {
+      color: #4fa6d5;
+      font-size: 20px;
+  }
+  .blog .blog-comments .comment p{
+    margin: auto;
+  }
+  p{
+    font-size:12px;
+  }
   }
 
   /*upload image*/
